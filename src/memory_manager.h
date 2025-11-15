@@ -25,12 +25,11 @@ typedef enum {
 
 
 void init_memory_manager (size_t total_size); //Inicializar el modulo de memoria
-void set_allocation_algorithm (int algorithm); //obtener el algoritmo del usuario 
+void set_allocation_algorithm (int algorithm); //Setear "globalmente" el algoritmo a usar
 
-
-memory_block_t* allocate_memory (const char* var_name, size_t size, int algorithm); //ALLOC
+void* allocate_memory (const char* var_name, size_t size); //ALLOC
 void free_memory (const char* var_name); //FREE
-void reallocate_memory (const char* var_name, size_t new_size); //REALLOC
-void print_memory_state (); //PRINT
+void* reallocate_memory (const char* var_name, size_t new_size); //REALLOC
+void  print_memory_state (); //PRINT
 
 #endif
